@@ -1,0 +1,9 @@
+<%= form_with model: [post, Comment.new] do |form| %>
+<div class="bg-light rounded-3 mt-3 p-4">
+<h3>Your Comment:</h3>
+<div class="container rounded-3">
+<%= form.text_area :content%>
+<%= form.submit%>
+<% end %>
+</div>
+</div>

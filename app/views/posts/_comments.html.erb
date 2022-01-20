@@ -1,0 +1,9 @@
+<div class="container p-3 rounded-2" style="background:tomato">
+<h2>Comments</h2>
+<div id="comments" class="p-2">
+      <%#Expands to render patial: comments/comment, collection post.comments %>
+
+ <%= render post.comments %>
+ </div>
+</div>
+<%= render "comments/new", post: post %>

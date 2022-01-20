@@ -1,0 +1,4 @@
+<div id="<%= dom_id(comment)%>" class="row bg-white p-1 rounded-3">
+  <div class="col-9 fw-bold"><%= comment.content %></div>
+ <div class="col-3">- <%= time_tag comment.created_at, "data-local": "time-ago" %></div><hr>
+</div>
