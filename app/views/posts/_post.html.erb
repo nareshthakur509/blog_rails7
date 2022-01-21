@@ -1,21 +1,22 @@
-<div id="<%= dom_id post %>">
+
+<div class="container p-3 bd-dark rounded-3" id="<%= dom_id post %>" style="background:grey">
   <p>
     <strong>Title:</strong>
     <%= post.title %>
   </p>
 
 
-  <p>
+  <p class="fst-italic">
     Posted <%= time_tag post.created_at, "data-local": "time-ago" %>
   </p>
 
-    <p>
+    <p class="fst-italic" >
     <strong> <%= pluralize post.comments.count, "comment" %></strong>
-  </p>
+  </p><hr>
 
   <p>
     <strong>Content:</strong>
     <%= post.content %>
   </p>
 
-</div>
+</div><br>

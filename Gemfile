@@ -3,9 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.2"
 
+
+gem 'sassc-rails'
+
+gem 'activeadmin', github: 'tagliala/activeadmin', branch: 'feature/railties-7' # FIXME: revert to stable
+
+gem 'arbre', github: 'activeadmin/arbre' # FIXME: remove
+gem 'inherited_resources', github: 'activeadmin/inherited_resources' # FIXME: remove
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.1"
-
+gem "devise"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
