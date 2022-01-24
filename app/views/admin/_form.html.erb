@@ -1,0 +1,5 @@
+<%= semantic_form_for :post, builder: ActiveAdmin::FormBuilder,action:"new" do |f| %>
+        <%= f.input :id%>
+        <%= f.input :content%>
+        <%= f.actions :submit %>
+<%end%>

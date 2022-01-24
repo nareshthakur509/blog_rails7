@@ -5,10 +5,13 @@
 <div class="container" id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
+    <% if current_user %>
     <p class="container">
       <%= link_to "Show this post", post %>
     </p>
+    <% end%>
   <% end %>
 </div>
-
+<% if current_user %>
 <%= link_to "New post", new_post_path %>
+<%end%>

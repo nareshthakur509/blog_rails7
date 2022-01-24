@@ -43,21 +43,25 @@ ActiveAdmin.register Post do
   show do
     attributes_table do
       row :title
-      row :content
-      table_for post.comments.order('content ASC') do
-        column "Comments" do |comment|
-          comment.content
-        end
+      row :content    
+         div do
+          active_admin_comments
+          end
       end
-    end
   end
   
-  form do |f|
-    f.inputs "Add/Edit Post" do
-      f.input :title
-      f.input :content
-      f.input :comments
-    end
-    actions
-  end
+
+
+  # form do |f|
+  #   f.inputs "Add/Edit Post" do
+  #     f.input :title
+  #     f.input :content
+  #     f.input :comments do |comment|
+  #   debugger
+  #     end
+  #   end
+  #   actions
+  # end
+
+  
 end

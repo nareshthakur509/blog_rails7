@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    
     @post = Post.new
   end
 
@@ -65,6 +66,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content , :user_id)
     end
 end

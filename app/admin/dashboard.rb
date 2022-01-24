@@ -1,17 +1,17 @@
-# frozen_string_literal: true
-ActiveAdmin.register_page "Dashboard" do
-  menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
+# # frozen_string_literal: true
+# ActiveAdmin.register_page "Dashboard" do
+#   menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
-  content title: proc { I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
-    end
+#   content title: proc { I18n.t("active_admin.dashboard") } do
+#     div class: "blank_slate_container", id: "dashboard_default_message" do
+#       span class: "blank_slate" do
+#         span I18n.t("active_admin.dashboard_welcome.welcome")
+#         small I18n.t("active_admin.dashboard_welcome.call_to_action")
+#       end
+#     end
 
-    # Here is an example of a simple dashboard with columns and panels.
-    #
+#     # Here is an example of a simple dashboard with columns and panels.
+#     #
     # columns do
     #   column do
     #     panel "Recent Posts" do
@@ -29,5 +29,31 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
     # end
-  end # content
+#   end # content
+# end
+ActiveAdmin.register_page "Dashboard" do
+
+  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
+
+  content title: proc{ I18n.t("active_admin.dashboard") } do
+
+  post_count = Post.count
+  comment_count =Comment.count
+ columns do
+   column do
+     panel "Total Number of Posts :-" do
+      link_to post_count, admin_posts_path
+
+     end
+   end
+   
+   column do
+     panel "Total Number of Comments :-" do
+      link_to comment_count, admin_posts_path
+      #  link_to "Comment.count", admin_posts_path
+     end
+   end
+
+ end
+  end
 end
