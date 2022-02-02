@@ -1,14 +1,24 @@
 class User < ActiveRecord::Base
+  # include Pay::Billable
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   # Extensions
   has_many :posts ,dependent: :destroy
-  # include Stripe::Callbacks
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  has_one :subscription
+  # include Stripe::Callback
         #naresh@anviam.com -> self.email.split('@') -> ["naresh", "anviam.com"] -> [0] -> "naresh".capitalize -> "Naresh"
   def username
     return email.split("@")[0].capitalize
   end
 
+
+
+
+  # def subscribed?
+  #   stripe_id?
+  # end
   
 #   # Callbacks
 #   before_create :create_stripe_customer

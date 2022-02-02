@@ -1,17 +1,18 @@
 <p style="color: green"><%= notice %></p>
-
+<% if current_user %>
 <h1>Posts</h1>
 
 <div class="container" id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
-    <% if current_user %>
     <p class="container">
       <%= link_to "Show this post", post %>
     </p>
-    <% end%>
   <% end %>
 </div>
-<% if current_user %>
 <%= link_to "New post", new_post_path %>
+<% else %>
+   <h1>Welcome</h1>
+   <%= link_to "Go for the Subscription", new_subscription_path %>
+   <p>Add some amazing posts <p>
 <%end%>

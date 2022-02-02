@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Subscriptionplans</h1>
+
+<div id="subscriptionplans">
+  <% @subscriptionplans.each do |subscriptionplan| %>
+    <%= render subscriptionplan %>
+    <p>
+      <%= link_to "Show this subscriptionplan", subscriptionplan %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New subscriptionplan", new_subscriptionplan_path %>

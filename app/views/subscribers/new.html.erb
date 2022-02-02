@@ -1,0 +1,75 @@
+  <div class="container mt-3">
+  <h3>Hey , <%= current_user.name%></h3>
+
+</form>
+    <div class="sr-root">
+    
+      <div class="sr-main shadow rounded-3">
+            
+        <h1 class="bg-dark shadow rounded-3 mt-2">Choose a Subscription plan</h1>
+        <div class="price-table-container p-2">
+          <section>
+              <input type="hidden" id="basicPrice" name="priceId">
+              <img
+                src="/assets/professional.png"
+                width="120"
+                height="120"
+                />
+              <div class="name">Bronze</div>
+              <div class="price">$20</div>
+              <div class="duration">per Month</div>
+              <div class="shadow rounded-3 mt-2">
+              <%= form_tag subscriber_path(1), method: :put do %>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's Subscription"
+                   data-amount="2000"></script>
+                   <% end %>
+              </div>
+          </section>
+          <section>
+              <input type="hidden" id="proPrice" name="priceId">
+              <img
+                src="/assets/starter.png"
+                width="120"
+                height="120"
+                />
+              <div class="name">Silver</div>
+              <div class="price">$30</div>
+              <div class="duration">per Month</div>
+              <div class="shadow rounded-3 mt-2">
+              <%= form_tag subscriber_path(2), method: :put do %>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's Subscription"
+                   data-amount="3000">
+                </script>
+                <% end %>
+              </div>
+          </section>
+          <section>
+              <input type="hidden" id="proPrice" name="priceId">
+              <img
+                src="/assets/professional.png"
+                width="120"
+                height="120"
+                />
+              <div class="name">Gold</div>
+              <div class="price">$40</div>
+              <div class="duration">per Month</div>
+              
+              <div class="shadow rounded-3 mt-2">
+              <%= form_tag subscriber_path(3), method: :put do %>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button bg-dark"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's Subscription"
+                   data-amount="4000">
+                </script>
+                <% end %>
+                </div>      
+          </section>
+        </div>
+      </div>
+    </div>
+
+  

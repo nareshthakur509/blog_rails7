@@ -3,11 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.2"
 
-
+gem "net-http"
+# gem "pay",'~>2.0'
 gem 'sassc-rails'
 gem 'devise'
 
 gem 'stripe'
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'activeadmin', github: 'tagliala/activeadmin', branch: 'feature/railties-7' # FIXME: revert to stable
 
 gem 'arbre', github: 'activeadmin/arbre' # FIXME: remove

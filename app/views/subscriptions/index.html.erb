@@ -1,0 +1,8 @@
+<% if current_user && current_user.subscribed %>
+<h1> Your have Subscribed Plan <h1>
+<p> activated on </p> <%= current_user.subscribed=true && current_user.updated_at.strftime("%B %d %Y, %l:%M%P") %><br><br>
+and will be expired on <%=  current_user.subscribed=true && current_user.updated_at + 1.month %>
+<% else %>
+<h1>You have no active plan</h2>
+<h3>please go for the Subscription</h2>
+<% end %>
